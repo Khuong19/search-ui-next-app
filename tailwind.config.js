@@ -4,7 +4,9 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/flowbite/**/*.js"
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
@@ -12,7 +14,16 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      dropShadow: {
+        '3xl': '0 0 0 0.25rem rgba(13, 110, 253, .25)',
+      },
+      colors: {
+        'focus-blue': 'rgba(13, 110, 253, .25)',
+        'input-blue': '#0d6efd',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }

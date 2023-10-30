@@ -1,0 +1,15 @@
+/* CustomSelect.css */
+
+/* Style the select element */
+
+
+/* Style the custom arrow */
+.custom-select::after {
+  content: '\25BC'; /* Unicode for a down arrow (you can replace with a custom icon) */
+  position: absolute;
+  top: 50%;
+  right: 1rem; /* Adjust the right position to control the arrow's placement */
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensure the arrow doesn't intercept clicks */
+  color: #333; /* Color of the arrow */
+}
