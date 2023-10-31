@@ -1,6 +1,6 @@
 import React from "react";
 
-const RadioButton = () => {
+const RadioButton = ({selected, onChange}) => {
   return (
     <>
         <div className="flex flex-wrap">
@@ -9,7 +9,9 @@ const RadioButton = () => {
                 <input
                 id="green-radio"
                 type="radio"
-                defaultValue=""
+                defaultValue="all"
+                checked={selected === 'all'}
+                onChange={onChange}
                 name="colored-radio"
                 className="w-4 h-4  bg-transparent border-gray-300 focus:ring-input-blue dark:focus:ring-blue-500 dark:ring-black focus:ring-2 dark:border-gray-600"
                 />
@@ -24,7 +26,9 @@ const RadioButton = () => {
                 <input
                 id="green-radio"
                 type="radio"
-                defaultValue=""
+                defaultValue="VBL"
+                checked={selected === 'vbl'}
+                onChange={onChange}
                 name="colored-radio"
                 className="w-4 h-4  bg-white border-gray-300 focus:ring-input-blue dark:focus:ring-blue-500 dark:ring-black focus:ring-2 dark:bg-transparent dark:border-gray-600"
                 />
@@ -39,7 +43,9 @@ const RadioButton = () => {
                 <input
                 id="green-radio"
                 type="radio"
-                defaultValue=""
+                defaultValue="AL"
+                checked={selected === 'al'}
+                onChange={onChange}
                 name="colored-radio"
                 className="w-4 h-4  bg-white border-gray-300 focus:ring-input-blue dark:focus:ring-blue-500 dark:ring-black focus:ring-2 dark:bg-transparent dark:border-gray-600"
                 />

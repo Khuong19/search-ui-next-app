@@ -1,14 +1,23 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
-const SearchButton = () => {
+const SearchButton = ({ onSearch }) => {
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const handleSearch = () => {
+        onSearch(searchTerm)
+    }
     return (
         <form className='w-[450px]'>
             <div className="relative flex flex-wrap items-stretch sm:w-full gap-1">
-                <input type="search" id="default-search" className="relative flex-auto border-r-0 block min-w-0 rounded-3xl border bg-white focus:transition-all focus:ease-in-out focus:z-10 py-[11px] px-[16px] focus:drop-shadow-3xl focus:border-focus-blue focus:border-4 Class
-Properties
-outline-none" required />
+                <input type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                id="default-search" 
+                className="relative flex-auto border-r-0 block min-w-0 rounded-3xl border bg-white focus:transition-all focus:ease-in-out focus:z-10 py-[11px] px-[16px] focus:drop-shadow-3xl focus:border-focus-blue focus:border-4 Class Properties outline-none" 
+                required />
                 <button 
+                onClick={handleSearch}
                 type="submit" 
                 className="flex relative z-2 right-0 bottom-0 ml-[-60px] px-4 py-3 border-gray-300 border rounded-3xl bg-white"
                 >
