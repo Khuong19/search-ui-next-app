@@ -7,7 +7,6 @@ import { Pagination } from 'antd'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux';
-import 
 const Result = () => {
   const searchResults = useSelector((state) => state.searchResults);
   const [data, setData] = useState([]);
