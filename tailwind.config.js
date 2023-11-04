@@ -20,6 +20,8 @@ module.exports = {
       colors: {
         'focus-blue': 'rgba(13, 110, 253, .25)',
         'input-blue': '#0d6efd',
+        'light-gray':'#6c757d',
+        'light-blue':'#cff4fc'
       }
     },
   },

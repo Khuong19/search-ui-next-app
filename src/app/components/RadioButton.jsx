@@ -12,7 +12,7 @@ const RadioButton = ({selected, onChange}) => {
                 defaultValue="all"
                 checked={selected === 'all'}
                 onChange={onChange}
-                name="colored-radio"
+                name="type"
                 className="w-4 h-4  bg-transparent border-gray-300 focus:ring-input-blue dark:focus:ring-blue-500 dark:ring-black focus:ring-2 dark:border-gray-600"
                 />
                 <label
@@ -26,10 +26,10 @@ const RadioButton = ({selected, onChange}) => {
                 <input
                 id="green-radio"
                 type="radio"
-                defaultValue="VBL"
+                defaultValue="vbl"
                 checked={selected === 'vbl'}
                 onChange={onChange}
-                name="colored-radio"
+                name="type"
                 className="w-4 h-4  bg-white border-gray-300 focus:ring-input-blue dark:focus:ring-blue-500 dark:ring-black focus:ring-2 dark:bg-transparent dark:border-gray-600"
                 />
                 <label
@@ -43,10 +43,10 @@ const RadioButton = ({selected, onChange}) => {
                 <input
                 id="green-radio"
                 type="radio"
-                defaultValue="AL"
+                defaultValue="al"
                 checked={selected === 'al'}
                 onChange={onChange}
-                name="colored-radio"
+                name="type"
                 className="w-4 h-4  bg-white border-gray-300 focus:ring-input-blue dark:focus:ring-blue-500 dark:ring-black focus:ring-2 dark:bg-transparent dark:border-gray-600"
                 />
                 <label

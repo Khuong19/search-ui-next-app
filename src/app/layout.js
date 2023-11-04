@@ -1,7 +1,7 @@
 
 import Providers from './Providers'
 import './globals.css'
-
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 
 export const metadata = {
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body><Providers>{children}</Providers></body>
+      <body className='dark:bg-[#212529]'><Providers>{children}</Providers></body>
     </html>
   )
 }
