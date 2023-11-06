@@ -15,18 +15,20 @@ export default function Home() {
     setSelectedRadio(e.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault()
     if (selectedRadio === 'vbl') {
       router.push('/resultVbl');
     } else if (selectedRadio === 'al') {
       router.push('/resultAl');
     } else {
-      router.push({
-        pathname: '/search',
-        query: { keyword: `${searchTerm}` },
-      });
+      router.push(`/result?search=${searchTerm}&page=1`);
     }
   };
+
+  const handleKeywordChange = (keyword) => {
+    setSearchTerm(keyword)
+  }
 
   return (
     <section className="flex flex-col gap-5 items-center justify-center min-h-[860px]">
@@ -38,7 +40,7 @@ export default function Home() {
         className="text-center"
       />
       <p className="font-light italic">Tìm kiếm trong 303,231 văn bản luật và 70,000 án lệ</p>
-      <SearchButton getSearchResult={handleSearch} />
+      <SearchButton handleSearch = {handleSearch} handleKeywordChange = {handleKeywordChange} />
       <RadioButton selected={selectedRadio} onChange={handleRadioChange} />
       <DropDown />
     </section>

@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import DropDown from "../../components/DropDown";
 import Link from "next/link";
 async function getContent(id) {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts/" + id, {
+  const res = await fetch("http://5.104.83.78:1337/api/law-posts?filters[id][$eq]=" + id, {
     next: {
       revalidate: 60,
     },
@@ -31,7 +31,7 @@ export default async function Content({ params }) {
               className="text-[#0A58CA] dark:text-[#6ea8fe]"
               aria-disabled
             >
-              {content.title}
+              {content._source.title}
             </Link>
           </h2>
 

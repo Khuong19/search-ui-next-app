@@ -15,20 +15,21 @@ const Header = () => {
   const handleRadioChange = (e) => {
     setSelectedRadio(e.target.value);
   };
-  const pathname = '/result/?search=' + searchTerm;
   
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault()
     if (selectedRadio === 'vbl') {
       router.push('/resultVbl');
     } else if (selectedRadio === 'al') {
       router.push('/resultAl');
     } else {
-      router.push({
-        pathname: pathname,
-        query: { keyword: `${searchTerm}` },
-      });
+      router.push(`/result?search=${searchTerm}&page=1`);
     }
   };
+
+  const handleKeywordChange = (keyword) => {
+    setSearchTerm(keyword)
+  }
 
   return (
     <div className="container mx-auto">
@@ -42,7 +43,7 @@ const Header = () => {
             className="text-center"
           />
         </Link>
-        <SearchButton getSearchResult={handleSearch} />
+        <SearchButton handleSearch = {handleSearch} handleKeywordChange = {handleKeywordChange} />
       </div>
       <div className="mt-[48px] ml-[8px]">
         <RadioButton selected={selectedRadio} onChange={handleRadioChange} />
