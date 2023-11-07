@@ -39,9 +39,6 @@ const Result = (context) => {
       setCurrentPage(page);
     };
 
-    function formatTime(date) {
-      return format(date, 'MMMM d, yyyy h:mm a');
-    }
     console.log(data.took)
   return (
     <div className='container max-w-[936px] mx-auto'>
