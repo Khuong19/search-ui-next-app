@@ -9,7 +9,7 @@ import Content from "@/app/components/Content";
 import Attributes from "@/app/components/Attributes";
 import RelatedPosts from "@/app/components/RelatedPosts";
 import Diagram from "@/app/components/Diagram";
-import Download from "@/app/components/Download";
+
 export default function Details({ params }) {
   const [data, setData] = useState([]);
   const fetchData = async () => {
@@ -19,6 +19,7 @@ export default function Details({ params }) {
     );
     setData(response.data);
   };
+  console.log(process.env.API_BASE_URL)
   useEffect(() => {
     fetchData();
   }, []);

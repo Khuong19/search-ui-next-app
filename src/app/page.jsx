@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
-import SearchButton from '../components/SearchBar';
-import RadioButton from '../components/RadioButton';
-import DropDown from '../components/DropDown';
+import SearchButton from './components/SearchBar';
+import RadioButton from './components/RadioButton';
+import DropDown from './components/DropDown';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {

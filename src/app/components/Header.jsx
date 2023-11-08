@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <div className="container mx-auto">
       <div className="drop-shadow flex items-center gap-3 py-5 justify-center">
-        <Link href="/homepage">
+        <Link href="/#">
           <Image
             src="/bootstrap-logo.svg"
             alt="logo"
