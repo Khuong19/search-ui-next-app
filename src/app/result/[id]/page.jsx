@@ -13,8 +13,9 @@ import Download from "@/app/components/Download";
 export default function Details({ params }) {
   const [data, setData] = useState([]);
   const fetchData = async () => {
+    const apiUrl = process.env.API_BASE_URL;
     const response = await axios.get(
-      `http://5.104.83.78:1337/api/law-posts?populate=*&filters[id][%24eq]=${params.id}`
+      `${apiUrl}/api/law-posts?populate=*&filters[id][%24eq]=${params.id}`
     );
     setData(response.data);
   };

@@ -20,8 +20,9 @@ const Result = (context) => {
     const [currentPage, setCurrentPage] = useState(1)
     
     const fetchData = async (currentPage) => {
+      const apiUrl = process.env.API_BASE_URL;
       const response = await axios.get(
-        `http://5.104.83.78:1337/api/search-law-post?search=${searchTerm}&page=${currentPage}&limit=10`
+        `${apiUrl}/api/search-law-post?search=${searchTerm}&page=${currentPage}&limit=10`
         );
         setData(response.data);
       };
