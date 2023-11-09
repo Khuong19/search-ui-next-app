@@ -9,17 +9,19 @@ import Content from "@/app/components/Content";
 import Attributes from "@/app/components/Attributes";
 import RelatedPosts from "@/app/components/RelatedPosts";
 import Diagram from "@/app/components/Diagram";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default function Details({ params }) {
+  noStore();
   const [data, setData] = useState([]);
   const fetchData = async () => {
-    const apiUrl = process.env.API_BASE_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
     const response = await axios.get(
       `${apiUrl}/api/law-posts?populate=*&filters[id][%24eq]=${params.id}`
     );
     setData(response.data);
   };
-  console.log(process.env.API_BASE_URL)
+  console.log(process.env.API_BASE_URL);
   useEffect(() => {
     fetchData();
   }, []);
