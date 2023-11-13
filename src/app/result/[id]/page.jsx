@@ -9,17 +9,20 @@ import Content from "@/app/components/Content";
 import Attributes from "@/app/components/Attributes";
 import RelatedPosts from "@/app/components/RelatedPosts";
 import Diagram from "@/app/components/Diagram";
+import Skeleton from "@/app/components/Skeleton";
 import { unstable_noStore as noStore } from "next/cache";
 
 export default function Details({ params }) {
   noStore();
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const fetchData = async () => {
     const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
     const response = await axios.get(
       `${apiUrl}/api/law-posts?populate=*&filters[id][%24eq]=${params.id}`
     );
     setData(response.data);
+    setLoading(false);
     setActiveComponent("Component1");
   };
   
@@ -33,14 +36,16 @@ export default function Details({ params }) {
     setActiveComponent(componentName);
   };
 
-  console.log(data);
   return (
     <div className="container max-w-[936px] mx-auto">
       <Header />
+      {loading ? (
+        <Skeleton />
+      ) : (
+      <main>
       {data &&
         data.data &&
         data.data.map((item) => (
-          <main>
             <div
               key={item.id}
               className=" vbl-post py-2 bg-[#F8F9FA] flex flex-col gap-6 px-9 my-[16px]"
@@ -137,8 +142,9 @@ export default function Details({ params }) {
                 <Diagram dataURL={item.attributes.luoc_do} />
               )}
             </div>
-          </main>
         ))}
+        </main>
+        )}
       <DropDown />
     </div>
   );

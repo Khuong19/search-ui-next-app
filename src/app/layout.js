@@ -1,9 +1,9 @@
 
-import { Suspense } from 'react'
+
 import Providers from './Providers'
 import './globals.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import Loading from './result/Loading'
+
 
 
 export const metadata = {
