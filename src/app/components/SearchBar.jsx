@@ -8,7 +8,7 @@ const SearchButton = (props) => {
             type='text'
             onChange={(e) => props.handleKeywordChange(e.target.value)}
             id='default-search'
-            className='relative flex-auto border-gray-300 border-r-0 block min-w-0 rounded-3xl border bg-white dark:bg-[212529] dark:border-gray-500 focus:transition-all focus:ease-in-out focus:z-10 py-[11px] px-[16px] focus:drop-shadow-3xl focus:border-focus-blue focus:border-4 Class Properties outline-none'
+            className='relative flex-auto border-gray-300 border-r-0 block min-w-0 rounded-3xl border bg-white dark:bg-[#212529] dark:border-gray-500 focus:transition-all focus:ease-in-out focus:z-10 py-[11px] px-[16px] focus:drop-shadow-3xl focus:border-focus-blue focus:border-4 Class Properties outline-none'
             required
           />
           <button

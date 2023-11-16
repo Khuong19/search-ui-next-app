@@ -7,7 +7,6 @@ import Header from "../components/Header";
 import { Pagination } from "antd";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Suspense } from "react";
 import Skeleton from "../components/Skeleton";
 import { unstable_noStore as noStore } from "next/cache";
 
@@ -101,27 +100,27 @@ const Result = (context) => {
 
                 <ul className="nav mb-2 flex items-center gap-5 justify-start text-sm text-light-gray">
                   <li className="nav-item border border-light-gray rounded-md px-[8px] py-[4px] hover:bg-light-gray hover:text-white hover:border-white">
-                    <Link href="/resultVbl">
+                    <Link href={`/result/${item._id}`}>
                       <i className="bi bi-file-earmark-text"></i> Nội dung
                     </Link>
                   </li>
                   <li className="nav-item border border-light-gray rounded-md px-[8px] py-[4px] hover:bg-light-gray hover:text-white hover:border-white">
-                    <Link href="/resultVbl">
+                    <Link href={`/result/${item._id}`}>
                       <i className="bi bi-check2"></i> Thuộc tính
                     </Link>
                   </li>
                   <li className="nav-item border border-light-gray rounded-md px-[8px] py-[4px] hover:bg-light-gray hover:text-white hover:border-white">
-                    <Link href="/resultVbl">
+                    <Link href={`/result/${item._id}`}>
                       <i className="bi bi-list-task"></i> Văn bản liên quan
                     </Link>
                   </li>
                   <li className="nav-item border border-light-gray rounded-md px-[8px] py-[4px] hover:bg-light-gray hover:text-white hover:border-white">
-                    <Link href="/resultVbl">
+                    <Link href={`/result/${item._id}`}>
                       <i className="bi bi-diagram-2"></i> Lược đồ
                     </Link>
                   </li>
                   <li className="nav-item border border-light-gray rounded-md px-[8px] py-[4px] hover:bg-light-gray hover:text-white hover:border-white">
-                    <Link href="/resultVbl">
+                    <Link href={`/result/${item._id}`}>
                       <i className="bi bi-cloud-arrow-down"></i> Tải về
                     </Link>
                   </li>

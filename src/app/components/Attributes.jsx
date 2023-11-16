@@ -15,7 +15,7 @@ const Attributes = ({ dataURL }) => {
   ];
 
   return (
-    <table className="table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+    <table className="table-auto border-collapse rounded-lg overflow-hidden shadow-md dark:text-black">
       <thead>
         <tr className="bg-gray-100">
           <th className="text-left p-2">Thuộc tính</th>
