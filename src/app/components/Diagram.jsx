@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
+import { useRouter } from "next/navigation";
 const Diagram = ({ dataURL }) => {
   const [expandedItems, setExpandedItems] = useState({});
-
+  const router = useRouter();
   const handleItemClick = (id) => {
     // Toggle the state for the clicked item
     setExpandedItems((prevState) => ({
@@ -10,7 +10,7 @@ const Diagram = ({ dataURL }) => {
       [id]: !prevState[id],
     }));
   };
-
+  console.log(dataURL)
   if (dataURL && typeof dataURL === "object") {
     return (
       <div>
@@ -31,7 +31,7 @@ const Diagram = ({ dataURL }) => {
                     dataURL[key].map((item) => (
                       <ul className="">
                         <li className="text-[#0a58ca]">
-                          <a href={item.link}>Tên văn bản: {item.title} </a>
+                          <a href={`/result/${item.custom_id}`}>Tên văn bản: {item.title} </a>
                         </li>
                         <li>Số Hiệu: {item.so_hieu}</li>
                         <li>Lĩnh Vực: {item.linh_vuc}</li>

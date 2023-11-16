@@ -20,8 +20,9 @@ export default function Details({ params }) {
       `${apiUrl}/api/law-posts?populate=*&filters[id][%24eq]=${params.id}`
     );
     setData(response.data);
+    setActiveComponent("Component1");
   };
-  console.log(process.env.API_BASE_URL);
+  
   useEffect(() => {
     fetchData();
   }, []);
