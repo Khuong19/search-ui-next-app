@@ -36,7 +36,7 @@ const Header = () => {
       <div className="drop-shadow flex items-center gap-3 py-5 justify-center">
         <Link href="/#">
           <Image
-            src="/bootstrap-logo.svg"
+            src="/logo.png"
             alt="logo"
             width={72}
             height={57}

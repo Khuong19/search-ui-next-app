@@ -13,6 +13,22 @@ const Diagram = ({ dataURL }) => {
     }));
   };
 
+  const contentMapping = {
+    van_ban_duoc_huong_dan: "Văn bản được hướng dẫn",
+    van_ban_duoc_hop_nhat: "Văn bản được hợp nhất",
+    van_ban_bi_sua_doi_noi_dung: "Văn bản bị sửa đổi bổ sung",
+    van_ban_bi_dinh_chinh: "Văn bản bị đính chính",
+    van_ban_bi_thay_the: "Văn bản bị thay thế",
+    van_ban_duoc_dan_chieu: "Văn bản được dẫn chiếu",
+    van_ban_duoc_can_cu: "Văn bản được căn cứ",
+    van_ban_lien_quan_ngon_ngu: "Văn bản liên quan ngôn ngữ",
+    van_ban_lien_quan_cung_noi_dung: "Văn bản liên quan cùng nội dung",
+    van_ban_huong_dan: "Văn bản hướng dẫn",
+    van_ban_hop_nhat: "Văn bản hợp nhất",
+    van_ban_sua_doi_bo_sung: "Văn bản hợp sửa đổi bổ sung",
+    van_ban_dinh_chinh: "Văn bản đính chính",
+    van_ban_thay_the: "Văn bản thay thế",
+  };
 
   async function handleLinkClick (customId){
     const id = await fetchIdFromCustomId(customId);
@@ -35,14 +51,14 @@ const Diagram = ({ dataURL }) => {
                     onClick={() => handleItemClick(key)}
                     style={{ cursor: "pointer", fontWeight: "bold" }}
                   >
-                    {key}
+                    {contentMapping[key] || key}
                     {expandedItems[key] ? " - Ấn để ẩn" : " - Ấn để hiện"}
                   </div>
                   {expandedItems[key] &&
                     dataURL[key].map((item) => (
-                      <ul className="">
+                      <ul className="" key={item.custom_id}>
                         <li className="text-[#0a58ca]">
-                          <Link href='' onClick={() => handleLinkClick(item.custom_id)} >
+                          <Link href="" onClick={() => handleLinkClick(item.custom_id)}>
                             {item.title}
                           </Link>
                         </li>

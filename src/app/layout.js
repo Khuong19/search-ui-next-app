@@ -14,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body className='dark:bg-[#212529]'><Providers>{children}</Providers></body>
+      <head>
+        <link rel='icon' href='/favicon.ico' />
+      </head>
+      <body className='dark:bg-[#212529]'><Providers>{children}</Providers></body>
     </html>
   )
 }

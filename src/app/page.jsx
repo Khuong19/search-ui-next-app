@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <section className="flex flex-col gap-5 items-center justify-center min-h-[860px]">
       <Image
-        src="bootstrap-logo.svg"
+        src="/logo.png"
         alt="logo"
         width={72}
         height={57}

@@ -36,6 +36,8 @@ export default function Details({ params }) {
     setActiveComponent(componentName);
   };
 
+
+
   return (
     <div className="container max-w-[936px] mx-auto">
       <Header />

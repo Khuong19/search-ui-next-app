@@ -53,7 +53,7 @@ const RadioButton = ({selected, onChange}) => {
                 htmlFor="green-radio"
                 className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
-                Án luật
+                Án lệ
                 </label>
             </div>
     
